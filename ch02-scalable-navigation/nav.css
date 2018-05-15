@@ -1,0 +1,35 @@
+nav[role="navigation"] ul {
+    float: left;
+    width: 720px;
+    margin: 0;
+    padding: 10px 0 0 46px;
+    list-style: none;
+    background: #FFCB2D url(nav_bg.png) repeat-x bottom;
+
+}
+
+nav[role="navigation"] ul li {
+    float: left;
+    margin: 0 1px 0 0;
+    padding: 0;
+    margin: 0 1px 0 0;
+}
+
+nav[role="navigation"] ul li a {
+    float: left;
+    display: block;
+    margin: 0;
+    padding: 4px 8px;
+    color: #333;
+    text-decoration: none;
+    border: 1px solid #9B8748;
+    border-bottom: none;
+    background: #F9E9A9;
+}
+
+nav[role="navigation"] ul li a:hover {
+    color: #333;
+    padding-bottom: 4px;
+    border: 1px solid #727377;
+    background: #FFF;
+}
