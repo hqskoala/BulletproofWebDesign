@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta lang="zh">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <title>无懈可击的Web设计：使用HTML 5和CSS 3提高网站的灵活性与适应性(第3版)</title>
+    <link rel="stylesheet" href="example.css">
+    <style type="text/css">
+        #section1 {
+            width: 400px;
+            box-shadow: 4px 4px 4px #919191;
+            /* 阴影不能设置在table上，否则caption区域会没有阴影 */
+        }
+
+        table {
+            width: 100%;
+            border: 1px solid #000;
+            border-collapse: collapse;
+            /* 消除单元格之间的间隙 */
+            background: #FFF;
+
+        }
+
+        table caption {
+            margin: 0;
+            padding: 8px 20px;
+            text-align: left;
+            border: 1px solid #000;
+            border-bottom: none;
+            background: #FFF;
+        }
+
+        table th,
+        table td {
+            margin: 0;
+            padding: 8px 20px;
+            text-align: center;
+            border-bottom: 1px solid #B5B5B5;
+        }
+
+        table th {
+            color: #999;
+        }
+
+        table th:first-child,
+        table td:first-child {
+            text-align: left;
+        }
+
+        table tr {
+            background: #E6E6E6;
+        }
+
+        table tr:nth-child(even) {
+            background: #F1F1F1;
+        }
+
+        table colgroup col.year {
+            background: blue;
+            /* 优先级比tr低，会被覆盖掉？？ */
+        }
+
+        table td a {
+            display: block;
+            /* 每个链接单独一行，链接的区域填满，扩大可点击区域 */
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body id="chapter7-1">
+
+    <nav></nav>
+
+    <header id="pageHeader">
+        <h1>
+            第7章 可转换的表格
+        </h1>
+    </header>
+
+    <main>
+        <section id="section1">
+            <table>
+                <caption>
+                    财务报告
+                </caption>
+                <colgroup>
+                    <col class="year">
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>
+                            年份
+                        </th>
+                        <th>
+                            全年
+                        </th>
+                        <th>上半年</th>
+                        <th>下半年</th>
+                        <th>详情</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2017</td>
+                        <td>100</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>
+                            <a href="#">go</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2016</td>
+                        <td>80</td>
+                        <td>40</td>
+                        <td>40</td>
+                        <td>
+                            <a href="#">go</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2015</td>
+                        <td>60</td>
+                        <td>30</td>
+                        <td>30</td>
+                        <td>
+                            <a href="#">go</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2014</td>
+                        <td>40</td>
+                        <td>20</td>
+                        <td>20</td>
+                        <td>
+                            <a href="#">go</a>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+
+                </tfoot>
+            </table>
+        </section>
+    </main>
+
+    <footer id="pageFooter">
+
+    </footer>
+
+
+    <script src="example.js"></script>
+</body>
+
+</html>
