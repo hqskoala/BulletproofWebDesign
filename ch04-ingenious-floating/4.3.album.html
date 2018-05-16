@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta lang="zh">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <title>无懈可击的Web设计：使用HTML 5和CSS 3提高网站的灵活性与适应性(第3版)</title>
+    <link rel="stylesheet" href="example.css">
+    <style type="text/css">
+        #sweden {
+            float: left;
+            width: 300px;
+            padding: 10px 0;
+            border: 2px solid #C8CDD2;
+            background: linear-gradient(to bottom, blue, white) no-repeat top left;
+        }
+
+        #sweden dl {
+            /*
+            float: left;
+            width: 260px;
+            */
+            /* 宽度需要根据其父容器artile的宽度计算 */
+            /*CSS2.0规范：一个被浮动的框式组件必须要具有明确的宽度值。*/
+            /* 方法一：用浮动来清除浮动，需要设置宽度*/
+            overflow: hidden;
+            /* 方法二：开发调试阶段用这种方式清除浮动最简单 */
+            margin: 10px 20px;
+            padding: 0;
+        }
+
+        #sweden dl::after {
+            /* 方法三：通过伪元素来清除浮动 */
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        #sweden dt {
+            float: right;
+            width: 122px;
+            /*CSS2.0规范：一个被浮动的框式组件必须要具有明确的宽度值。*/
+            /* 宽度需要根据其父容器dl的宽度以及图片dd的宽度计算 */
+            /* 260 - 120 - 8 - 4*2 - 1*2*/
+            margin: 0;
+            padding: 0;
+            font-size: 130%;
+            letter-spacing: 1px;
+            color: #627081;
+        }
+
+        #sweden dd {
+            margin: 0;
+            padding: 0;
+            font-size: 85%;
+            line-height: 1.5em;
+            color: #666;
+        }
+
+        #sweden dd.img img {
+            float: left;
+            margin: 0 8px 0 0;
+            padding: 4px;
+            border: 1px solid #D9E0E6;
+            border-bottom-color: #C8CDD2;
+            border-right-color: #C8CDD2;
+            background: #FFF;
+            box-shadow: 1px 1px 3px rfba(0, 0, 0, .12);
+        }
+
+        #sweden dl:nth-of-type(even) dt {
+            /*odd奇数，even偶数*/
+            float: left;
+        }
+
+        #sweden dl:nth-of-type(even) dd.img img {
+            /*odd奇数，even偶数*/
+            float: right;
+            margin: 0 0 0 8px;
+        }
+
+        #sweden dl:nth-of-type(2) dd {
+            /*dl分成两栏，设置右侧外边距，让描述在左侧分栏*/
+            margin: 0 138px 0 0;
+        }
+
+        #sweden dl:nth-of-type(2) dd.img {
+            /*dl分成两栏，设置左侧外边距，让图片在右侧分栏*/
+            margin: 0 0 0 122px;
+        }
+    </style>
+</head>
+
+<body id="chapter1-1">
+
+    <nav></nav>
+
+    <header id="pageHeader">
+        <h1>
+        </h1>
+    </header>
+
+    <main>
+
+        <article id="sweden">
+            <dl>
+                <dt>
+                    第一张图片
+                </dt>
+                <dd class="img">
+                    <img src="../images/face.jpg" width="120" alt="">
+                </dd>
+                <dd>
+                    第一张图片的说明文字。
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    第二张图片
+                </dt>
+                <dd class="img">
+                    <img src="../images/face.jpg" width="120" alt="">
+                </dd>
+                <dd>
+                    第二张图片说明文字。如果文字很长，会延伸到图片下方围绕着它。这其实是浮动对象的一个基本特征：内容会最大限度地占据浮动对象周围的空间。
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    第三张图片
+                </dt>
+                <dd class="img">
+                    <img src="../images/face.jpg" width="120" alt="">
+                </dd>
+                <dd>
+                    第三张图片的说明文字。如果文字很长，会延伸到图片下方围绕着它。这其实是浮动对象的一个基本特征：内容会最大限度地占据浮动对象周围的空间。
+                </dd>
+            </dl>
+        </article>
+    </main>
+
+    <footer id="pageFooter">
+
+    </footer>
+
+
+    <script src="example.js"></script>
+</body>
+
+</html>
